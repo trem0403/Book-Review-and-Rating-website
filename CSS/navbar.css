@@ -117,7 +117,7 @@ header {
         top: 100%;
         right: -100%;
         width: 270px;
-        height: 29vh;
+        height: 31vh;
         display: flex;
         background-color: var(--accent-color);
         flex-direction: column;

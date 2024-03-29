@@ -1,6 +1,52 @@
 :root {
-    --bg-color: #222327;
     --text-color: #fff;
     --accent-color: #c24d2c;
-    --transition-speed: all .50s ease;
 }
+
+footer {
+    background: #111;
+    width: 100vw;
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+  
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer h3 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 2rem;
+  }
+  
+  .footer p {
+    max-width: 50rem;
+    margin: 0.6rem auto;
+    line-height: 1.5rem;
+    font-size: 0.7rem;
+  }
+  
+  .footer-end {
+    background: #000;
+    width: 100vw;
+    padding: 1.3rem 0;
+  }
+  
+  .footer-end p {
+    font-size: 0.9rem;
+    word-spacing: 2px;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  
+  .footer-end span {
+    text-transform: capitalize;
+    color: var(--accent-color);
+    font-weight: bold;
+  }
