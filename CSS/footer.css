@@ -1,0 +1,6 @@
+:root {
+    --bg-color: #222327;
+    --text-color: #fff;
+    --accent-color: #c24d2c;
+    --transition-speed: all .50s ease;
+}
