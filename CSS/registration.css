@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+:root {
+  font-size: 16px;
+  --bg-color: #222327;
+  --text-color: #fff;
+  --accent-color: #f25f36;
+  --transition-speed: all 0.5s ease;
+}
+
+body {
+  background-image: url(/img/background/bi-background-black.png);
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000; /* Ensure the back button appears above other content */
+}
+
+.back-button a i { 
+  color: #c24d2c;
+  font-size: 1.5rem;
+}
+
+.formcontainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  border: 3px solid #585858;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.formcontainer h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+.textfield {
+  margin-bottom: 2px;
+}
+
+.textfield label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.textfield input[type="text"],
+.textfield input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.textfield.success input {
+  border-color: green;
+}
+
+.textfield.error input {
+  border-color: red;
+}
+
+.textfield .error {
+  color: red;
+  font-size: 0.7rem;
+  height: 13px;
+  padding: 10px 2px;
+}
+
+.checkbox label {
+  text-decoration: solid;
+}
+
+.checkbox input[type="checkbox"] {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.checkbox .error {
+  display: inline-block;
+  color: red;
+  font-size: 0.7rem;
+  height: 13px;
+  margin-left: 10px;
+}
+
+button {
+  width: 65%;
+  padding: 10px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  border: 0;
+  border-radius: 30px;
+  background-color: var(--accent-color);
+  transition: var(--transition-speed);
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #c24d2c;
+}
+
+.login-link {
+  text-align: center;
+  margin: 25px 0 10px;
+}
+
+.login-link a {
+  color: var(--accent-color);
+  font-weight: bold;
+  text-decoration: none;
+  transition: var(--transition-speed);
+}
+
+.login-link a:hover {
+  color: #c24d2c;
+  text-decoration: underline;
+}
+
+
+@media only screen and (max-width:2000px) {
+  .formcontainer {
+    width: 50%;
+    padding: 5px 40px;
+  }
+}
+
+
+@media (max-width: 1056px) {
+  .formcontainer {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width:750px) {
+
+  .formcontainer {
+    font-size: 0.8rem;
+    width: 80%;
+  }
+
+  .formcontainer h1 {
+    font-size: 1.3rem;
+  }
+  
+  .checkbox label {
+    font-size: 0.6rem;
+  }
+  
+  .checkbox input[type="checkbox"] {
+    width: 10px; 
+    height: 10px; 
+  }
+  
+  .checkbox .error {
+    font-size: 0.5rem;
+    margin-left: 5px;
+  }
+
+  .textfield .error {
+    font-size: 0.5rem;
+    height: 13px;
+    padding: 10px 2px;
+  }
+}
+

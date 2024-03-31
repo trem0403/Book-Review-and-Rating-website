@@ -102,16 +102,15 @@ header {
 
     .navbar a {
         padding: 16px;
-        margin: 5px ;
-       
+        margin: 5px;
     }
-
 }
 
 @media (max-width: 1090px) {
     #menu-icon {
         display: block;
     }
+    
     .navbar {
         position: absolute;
         top: 100%;
