@@ -56,18 +56,22 @@ header {
     color: var(--accent-color);
 }
 
-.main {
+.user-section {
     display: flex;
     align-items: center;
 }
 
-.main a{
+.user-section a{
     margin-right: 25px;
     margin-left: 10px;
     color: var(--text-color);
     font-size: 1.1rem;
     font-weight: 500;
     transition: var(--transition-speed);
+}
+
+.user-section a:hover {
+    color: var(--accent-color);
 }
 
 .user {
@@ -81,9 +85,6 @@ header {
 }
 
 
-.main a:hover {
-    color: var(--accent-color);
-}
 
 #menu-icon {
     font-size: 35px;
