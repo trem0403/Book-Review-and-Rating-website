@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Group 8">
-    <link rel="stylesheet" href="/CSS/navbar.css" />
-    <link rel="stylesheet" href="/CSS/footer.css" />
-    <link rel="stylesheet" href="/CSS/index.css" />
+    <link rel="stylesheet" href="http://localhost/Book-Review-and-Rating-website/CSS/navbar.css" />
+    <link rel="stylesheet" href="http://localhost/Book-Review-and-Rating-website/CSS/footer.css" />
+    <link rel="stylesheet" href="http://localhost/Book-Review-and-Rating-website/CSS/index.css" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
         
 
         <ul class="navbar">
-            <li><a href="/HTML/index.html" class="active">Home</a></li>
+            <li><a href="http://localhost/Book-Review-and-Rating-website/index.php" class="active">Home</a></li>
             <li><a href="#">About us</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Blog</a></li>
@@ -33,8 +33,8 @@
         </ul>
 
         <div class="main">
-            <a href="/HTML/login.html" class="user"><i class="ri-user-fill"></i>Sign in</a>
-            <a href="/HTML/registration.html">Register</a>
+            <a href="http://localhost/Book-Review-and-Rating-website/login.php" class="user"><i class="ri-user-fill"></i>Sign in</a>
+            <a href="http://localhost/Book-Review-and-Rating-website/registration.php">Register</a>
             <div class="bx bx-menu" id="menu-icon"></div>
         </div>
     </header>
@@ -55,7 +55,7 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="/JS/nav.js"></script>
+    <script type="text/javascript" src="http://localhost/Book-Review-and-Rating-website/JS/nav.js"></script>
 
 </body>
 

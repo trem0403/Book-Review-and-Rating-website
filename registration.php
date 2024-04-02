@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Group 8">
-    <link rel="stylesheet" href="/CSS/registration.css">
+    <link rel="stylesheet" href="http://localhost/Book-Review-and-Rating-website/CSS/registration.css" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <script defer src="/JS/registration.js"></script>
+    <script defer src="http://localhost/Book-Review-and-Rating-website/JS/registration.js"></script>
 
     <title>Register</title>
 </head>
@@ -15,13 +15,13 @@
 <body>
 
     <div class="back-button">
-        <a href="/HTML/index.html"><i class='bx bxs-left-arrow'></i></a>
+        <a href="http://localhost/Book-Review-and-Rating-website/index.php"><i class='bx bxs-left-arrow'></i></a>
     </div>
 
     <div class="formcontainer">
         <h1>Register</h1>
         <hr>
-        <form action="registration.html" method="get" onsubmit="return validate();">
+        <form action="http://localhost/Book-Review-and-Rating-website/registration.php" method="get" onsubmit="return validate();">
             <div class="textfield">
                 <label for="email">Email Address</label>
                 <input type="text" name="email" id="email" placeholder="Email">
@@ -57,7 +57,7 @@
 
         </form>
         <div class="login-link">
-            <p>Already have an account? <a href="/HTML/login.html">Login</a></p>
+            <p>Already have an account? <a href="http://localhost/Book-Review-and-Rating-website/login.php">Login</a></p>
         </div>
     </div>
 
