@@ -56,12 +56,12 @@ header {
     color: var(--accent-color);
 }
 
-.main {
+.user-section {
     display: flex;
     align-items: center;
 }
 
-.main a{
+.user-section a{
     margin-right: 25px;
     margin-left: 10px;
     color: var(--text-color);
@@ -70,19 +70,18 @@ header {
     transition: var(--transition-speed);
 }
 
-.user {
+.user-section a:hover {
+    color: var(--accent-color);
+}
+
+.user-section {
     display: flex;
     align-items: center;
 }
 
-.user i {
+.user-section i {
     color: var(--accent-color);
     margin-right: 7px;
-}
-
-
-.main a:hover {
-    color: var(--accent-color);
 }
 
 #menu-icon {
