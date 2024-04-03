@@ -7,13 +7,13 @@
     <meta name="author" content="Group 8">
 
     <!-- External CSS stylesheets -->
-    <link rel="stylesheet" href="http://localhost/Book-Review-and-Rating-website/CSS/registration.css" />
+    <link rel="stylesheet" href="CSS/registration.css" />
     
     <!-- External icons stylesheet -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     
     <!-- External JavaScript file for form validation -->
-    <script defer src="http://localhost/Book-Review-and-Rating-website/JS/registration.js"></script>
+    <script defer src="JS/registration.js"></script>
 
     <title>Register</title>
 </head>
@@ -21,7 +21,7 @@
 <body>
     <!-- Back button to return to index page -->
     <div class="back-button">
-        <a href="http://localhost/Book-Review-and-Rating-website/index.php"><i class='bx bxs-left-arrow'></i></a>
+        <a href="index.php"><i class='bx bxs-left-arrow'></i></a>
     </div>
 
     <!-- Form container for registration -->
@@ -29,9 +29,9 @@
         <!-- Title -->
         <h1>Register</h1>
         <hr>
-        
+    
         <!-- Registration form -->
-        <form action="http://localhost/Book-Review-and-Rating-website/includes/registration-inc.php" method="post" onsubmit="return validate();">
+        <form action="includes/registration-inc.php" method="post" onsubmit="return validate()";>
              <!-- Email field -->
             <div class="textfield">
                 <label for="email">Email Address</label>
@@ -73,7 +73,7 @@
 
         <!-- Login link -->
         <div class="login-link">
-            <p>Already have an account? <a href="http://localhost/Book-Review-and-Rating-website/login.php">Login</a></p>
+            <p>Already have an account? <a href="login.php">Login</a></p>
         </div>
     </div>
 </body>

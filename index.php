@@ -21,4 +21,4 @@ include_once 'header.php';
 </body>
 </html>
 <!-- External JavaScript file for navigation menu -->
-<script type="text/javascript" src="http://localhost/Book-Review-and-Rating-website/JS/nav.js"></script>
+<script type="text/javascript" src="JS/nav.js"></script>

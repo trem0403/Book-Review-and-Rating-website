@@ -34,7 +34,7 @@ function invalidUsername ($username)
 {
     $result;
 
-    if(empty($username) || strlen($username) < 20)
+    if(empty($username) || strlen($username) > 20)
     {
         $result = true;
     }
@@ -86,7 +86,7 @@ function usernameExists($con, $username, $email)
 
     if(!mysqli_stmt_prepare($stmt, $query))
     {
-        header("location: ../registration.php?error=stmtfailed");
+        header("location: ../registration.php");
         exit();
     }
 
@@ -104,9 +104,7 @@ function usernameExists($con, $username, $email)
         $result = false;
         return $result;  
     }
-
-    mysqli_stmt_close($stmt);
-    
+    mysqli_stmt_close($stmt); 
 }
 
 function createUser($con, $email, $username, $pass)
@@ -116,7 +114,7 @@ function createUser($con, $email, $username, $pass)
 
     if(!mysqli_stmt_prepare($stmt, $query))
     {
-        header("location: ../registration.php?error=stmtfailed");
+        header("location: ../registration.php");
         exit();
     }
 
@@ -126,7 +124,6 @@ function createUser($con, $email, $username, $pass)
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header("location: ../registration.php?error=none");
-
+    header("location: ../registration.php");
 }
 

@@ -6,44 +6,45 @@ if (isset($_POST["submit"])) {
     $pass = $_POST["pass"];
     $pass2 =  $_POST["pass2"];
 
+   
     require_once 'connections-inc.php';
     require_once 'functions-inc.php';
 
     if (emptyInputRegistration($email, $username, $pass, $pass2) !== false)
     {
-        header("location: ../registration.php?error=emptyinput");
+        header("location: ../registration.php");
         exit();
     } 
 
     if (invalidEmail($email) !== false)
     {
-        header("location: ../registration.php?error=invalidEmail");
+        header("location: ../registration.php");
         exit();
     } 
 
     
     if (invalidUsername($username) !== false)
     {
-        header("location: ../registration.php?error=invalidusername");
+        header("location: ../registration.php");
         exit();
     } 
 
     if (passwordStrength($pass) !== false)
     {
-        header("location: ../registration.php?error=passwordtooweak");
+        header("location: ../registration.php");
         exit();
     } 
 
     if (passwordMatch($pass, $pass2) !== false)
     {
-        header("location: ../registration.php?error=passwordsnotmatching");
+        header("location: ../registration.php");
         exit();
     } 
 
     
     if (usernameExists($con, $username, $email) !== false)
     {
-        header("location: ../registration.php?error=usernametaken");
+        header("location: ../registration.php");
         exit();
     } 
 

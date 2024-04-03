@@ -9,5 +9,5 @@ $con = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
 
 if(!$con)
 {
-    die("Failed to connect!" . mysqli_connect_error());
+    die("Failed to connect:" . mysqli_connect_error());
 }

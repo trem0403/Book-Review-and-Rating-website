@@ -7,9 +7,9 @@
     <meta name="author" content="Group 8">
 
     <!-- External CSS stylesheets -->
-    <link rel="stylesheet" href="http://localhost/Book-Review-and-Rating-website/CSS/navbar.css" />
-    <link rel="stylesheet" href="http://localhost/Book-Review-and-Rating-website/CSS/footer.css" />
-    <link rel="stylesheet" href="http://localhost/Book-Review-and-Rating-website/CSS/index.css" />
+    <link rel="stylesheet" href="CSS/navbar.css" />
+    <link rel="stylesheet" href="CSS/footer.css" />
+    <link rel="stylesheet" href="CSS/index.css" />
 
     <!-- External icons stylesheets -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
@@ -30,7 +30,7 @@
         
         <!-- Navigation links -->
         <ul class="navbar">
-            <li><a href="http://localhost/Book-Review-and-Rating-website/index.php" class="active">Home</a></li>
+            <li><a href="index.php" class="active">Home</a></li>
             <li><a href="#">Reviews</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Blog</a></li>
@@ -40,8 +40,8 @@
         <!-- User section -->
         <div class="user-section">
              <!-- Sign-in and Register links -->
-            <a href="http://localhost/Book-Review-and-Rating-website/login.php" class="user"><i class="ri-user-fill"></i>Sign in</a>
-            <a href="http://localhost/Book-Review-and-Rating-website/registration.php">Register</a>
+            <a href="login.php" class="user"><i class="ri-user-fill"></i>Sign in</a>
+            <a href="registration.php">Register</a>
             <!-- Menu icon for mobile view -->
             <div class="bx bx-menu" id="menu-icon"></div>
         </div>
