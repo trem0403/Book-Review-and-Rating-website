@@ -42,7 +42,7 @@ function validate() {
     }
 
     // User name validation
-    if (userValue === "" || userValue.length > 20) {
+    if (userValue === "" || userValue.length < 20) {
       outputError(username, "User name should be non-empty, and within 20 characters long."
       );
     } else {

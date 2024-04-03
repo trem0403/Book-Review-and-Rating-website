@@ -31,7 +31,7 @@
         <hr>
         
         <!-- Registration form -->
-        <form action="http://localhost/Book-Review-and-Rating-website/registration.php" method="get" onsubmit="return validate();">
+        <form action="http://localhost/Book-Review-and-Rating-website/includes/registration-inc.php" method="post" onsubmit="return validate();">
              <!-- Email field -->
             <div class="textfield">
                 <label for="email">Email Address</label>
@@ -41,8 +41,8 @@
 
             <!-- Username field -->
             <div class="textfield">
-                <label for="username">User Name</label>
-                <input type="text" name="username" id="username" placeholder="User name">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Username">
                 <div class="error"></div>
             </div>
 
@@ -56,7 +56,7 @@
             <!-- Retype password field -->
             <div class="textfield">
                 <label for="pass2">Re-type Password</label>
-                <input type="password" id="pass2" placeholder="Password">
+                <input type="password" name="pass2" id="pass2" placeholder="Re-type Password">
                 <div class="error"></div>
             </div>
 
@@ -68,7 +68,7 @@
             </div>
 
             <!-- Submit button -->
-            <button type="submit" class="submit">Sign-Up</button>
+            <button type="submit" name="submit" class="submit">Sign-Up</button>
         </form>
 
         <!-- Login link -->

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,11 +33,11 @@
         <hr>
 
         <!-- Login form -->
-        <form action="login.html" method="get" onsubmit="return validate();">
+        <form action="http://localhost/Book-Review-and-Rating-website/includes/login-inc.php" method="post" onsubmit="return validate();">
             <!-- Username field -->
             <div class="textfield">
-                <label for="username">User Name</label>
-                <input type="text" name="username" id="username" placeholder="User name">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Username/Email">
                 <div class="error"></div>
             </div>
 
