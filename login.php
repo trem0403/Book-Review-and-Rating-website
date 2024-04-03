@@ -1,4 +1,6 @@
-
+<?php
+    session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,9 +16,6 @@
     <!-- External icons stylesheet -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     
-    <!-- External JavaScript file for form validation -->
-    <script defer src="JS/login.js"></script>
-
     <title>Sign-in</title>
 </head>
 
@@ -33,7 +32,7 @@
         <hr>
 
         <!-- Login form -->
-        <form action="includes/login-inc.php" method="post" onsubmit="return validate();">
+        <form action="includes/login-inc.php" method="post">
             <!-- Username field -->
             <div class="textfield">
                 <label for="username">Username</label>
@@ -54,7 +53,7 @@
             </div>
 
             <!-- Submit button -->
-            <button type="submit" class="submit">Sign-in</button>
+            <button type="submit" name="submit" class="submit">Sign-in</button>
         </form>
 
         <!-- Registration link -->

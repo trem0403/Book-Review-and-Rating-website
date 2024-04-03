@@ -42,7 +42,7 @@ if (isset($_POST["submit"])) {
     } 
 
     
-    if (usernameExists($con, $username, $email) !== false)
+    if (userExists($con, $username, $email) !== false)
     {
         header("location: ../registration.php");
         exit();

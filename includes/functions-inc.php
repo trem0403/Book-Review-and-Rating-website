@@ -2,85 +2,67 @@
 
 function emptyInputRegistration ($email, $username, $pass, $pass2)
 {
-    $result;
-
     if(empty($email) || empty($username) || empty($pass) || empty($pass2))
     {
-        $result = true;
+        return true;
     }
     else
     {
-        $result = false;
-    }
-    return $result;
+        return false;
+    }   
 }
 
 function invalidEmail ($email)
 {
-    $result;
-
     if(filter_var(!$email, FILTER_VALIDATE_EMAIL))
     {
-        $result = true;
+        return true;
     }
     else
     {
-        $result = false;
+        return false;
     }
-    return $result;
 }
 
 function invalidUsername ($username)
 {
-    $result;
-
     if(empty($username) || strlen($username) > 20)
     {
-        $result = true;
+        return true;
     }
     else
     {
-        $result = false;
+        return false;
     }
-    return $result;
 }
 
 function passwordStrength ($pass)
 {
-    $result;
-
     if(strlen($pass) < 6 || !preg_match("/[A-Z]/", $pass) || !preg_match("/[a-z]/", $pass))
     {
-        $result = true;
+        return true;
     }
     else
     {
-        $result = false;
+        return false;
     }
-    return $result;
     
 }
 
 function passwordMatch ($pass, $pass2)
 {
-    $result;
-
     if($pass !== $pass2)
     {
-        $result = true;
+        return true;
     }
     else
     {
-        $result = false;
+        return false;
     }
-    return $result;
-    
 }
 
-function usernameExists($con, $username, $email)
+function userExists($con, $username, $email)
 {
-    $result;
-
     $query = "SELECT * FROM users WHERE user_name = ? OR user_email = ?;";
     $stmt = mysqli_stmt_init($con);
 
@@ -97,14 +79,14 @@ function usernameExists($con, $username, $email)
 
     if($row = mysqli_fetch_assoc($dataResult))
     {
-        return row;
+        mysqli_stmt_close($stmt);
+        return $row;
     }
     else
     {
-        $result = false;
-        return $result;  
+        mysqli_stmt_close($stmt);
+        return false;  
     }
-    mysqli_stmt_close($stmt); 
 }
 
 function createUser($con, $email, $username, $pass)
@@ -126,4 +108,45 @@ function createUser($con, $email, $username, $pass)
 
     header("location: ../registration.php");
 }
+
+function emptyInputLogin($username, $pass)
+{
+    if(empty($username) || empty($pass))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }   
+}
+
+function loginUser($con, $username, $pass)
+{
+    $userExists = userExists($con, $username, $username);
+    
+    if($userExists === false)
+    {
+        header("location: ../login.php");
+        exit(); 
+    }
+
+    $passwordHashed = $userExists["user_password"];
+    $checkPassword = password_verify($pass, $passwordHashed);
+
+    if($checkPassword === false)
+    {
+        header("location: ../login.php");
+        exit(); 
+    }
+    else if ($checkPassword === true)
+    {
+        session_start();
+        $_SESSION["userid"] = $userExists["user_id"];
+        $_SESSION["username"] = $userExists["user_name"];
+        header("location: ../index.php");
+        exit(); 
+    }
+}
+
 

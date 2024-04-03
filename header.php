@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,8 +44,17 @@
         <!-- User section -->
         <div class="user-section">
              <!-- Sign-in and Register links -->
-            <a href="login.php" class="user"><i class="ri-user-fill"></i>Sign in</a>
-            <a href="registration.php">Register</a>
+            <?php 
+                if (isset($_SESSION["username"])) {
+                   echo "<a href='profile.php'>Profile</a>";
+                   echo "<a href='includes/logout-inc.php'>Logout</a>";
+                }
+                else {
+                    echo "<a href='login.php' class='user'><i class='ri-user-fill'></i>Sign in</a>";
+                    echo "<a href='registration.php'>Register</a>";
+                }
+            ?>
+            
             <!-- Menu icon for mobile view -->
             <div class="bx bx-menu" id="menu-icon"></div>
         </div>
