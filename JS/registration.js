@@ -80,7 +80,6 @@ function validate() {
       password.value = "";
       password2.value = "";
       terms.checked = false;
-      newsletter.checked = false;
     }
   };
 
@@ -88,12 +87,6 @@ function validate() {
   return false; // Prevent form submission
 }
 
-// Add event listener to newsletter checkbox
-newsletter.addEventListener("click", () => {
-  if (newsletter.checked) {
-    alert( "By selecting this option, you may receive spam emails. Click OK to acknowledge."
-    );
-  }
-});
+
 
 

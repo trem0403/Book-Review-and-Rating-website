@@ -5,7 +5,7 @@ $dbUser = "root";
 $dbPass = "";
 $dbName = "login_sample_db";
 
-$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+$con = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
 
 if(!$con)
 {
