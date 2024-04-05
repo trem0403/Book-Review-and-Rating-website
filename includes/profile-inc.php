@@ -34,14 +34,18 @@ if (isset($_POST['update_profile'])) {
     if (!empty($update_pass) || !empty($new_pass) || !empty($confirm_pass)) {
         if (!password_verify($old_pass, $hashed_password)) {
             $message[] = 'Old password is not correct';
+            $messageType = 'error';
         } elseif ($new_pass != $confirm_pass) {
             $message[] = 'Confirm password does not match new password';
+            $messageType = 'error';
         } elseif (passwordStrength($confirm_pass) !== false) {
             $message[] = 'New password requires 1 uppercase, 1 lowercase, and 6 characters';
+            $messageType = 'error';
         } else {
             $hashedpassword = password_hash($confirm_pass, PASSWORD_DEFAULT);
             mysqli_query($con, "UPDATE `users` SET user_password = '$hashedpassword' WHERE user_id = '$user_id'") or die('query failed');
             $message[] = 'Password updated successfully!';
+            $messageType = 'success';
         }
     }
 
@@ -53,12 +57,14 @@ if (isset($_POST['update_profile'])) {
     if (!empty($update_image)) {
         if ($update_image_size > 2000000) {
             $message[] = 'Image is too large';
+            $messageType = 'error';
         } else {
             $image_update_query = mysqli_query($con, "UPDATE `users` SET user_image = '$update_image' WHERE user_id = '$user_id'") or die('query failed');
             if ($image_update_query) {
                 move_uploaded_file($update_image_tmp_name, $update_image_folder);
             }
             $message[] = 'Image updated succssfully!';
+            $messageType = 'success';
         }
     }
 
