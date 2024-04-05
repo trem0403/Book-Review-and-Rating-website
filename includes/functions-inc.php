@@ -91,7 +91,8 @@ function userExists($con, $username, $email)
 
 function createUser($con, $email, $username, $pass)
 {
-    $query = "INSERT INTO users (user_email, user_name, user_password) VALUES (?, ?, ?)";
+    $defaultImage = 'img/profile/default-avatar.png';
+    $query = "INSERT INTO users (user_email, user_name, user_password, user_image) VALUES (?, ?, ?, ?)";
     $stmt = mysqli_stmt_init($con);
 
     if(!mysqli_stmt_prepare($stmt, $query))
@@ -102,11 +103,16 @@ function createUser($con, $email, $username, $pass)
 
     $hashedpassword = password_hash($pass, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "sss", $email, $username, $hashedpassword);
+    mysqli_stmt_bind_param($stmt, "ssss", $email, $username, $hashedpassword, $defaultImage);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
     header("location: ../login.php");
+}
+
+function deleteUser()
+{
+
 }
 
 function emptyInputLogin($username, $pass)
@@ -127,7 +133,7 @@ function loginUser($con, $username, $pass)
     
     if($userExists === false)
     {
-        header("location: ../login.php");
+        header("location: ../login.php?error=wronglogin");
         exit(); 
     }
 
@@ -136,7 +142,7 @@ function loginUser($con, $username, $pass)
 
     if($checkPassword === false)
     {
-        header("location: ../login.php");
+        header("location: ../login.php?error=wronglogin");
         exit(); 
     }
     else if ($checkPassword === true)

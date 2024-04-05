@@ -66,6 +66,17 @@ body {
   border-radius: 5px;
 }
 
+.errorBox {
+  width: 100%;
+  padding: 3px;
+  background-color: #df4554;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #fff;
+}
+
 .textfield.success input {
   border-color: green;
 }

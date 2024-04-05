@@ -23,13 +23,15 @@
 </head>
 
 <body>
-    <!-- Back button to return to index page -->
-    <div class="back-button">
-        <a href="index.php"><i class='bx bxs-left-arrow'></i></a>
-    </div>
-
+    
     <!-- Form container for registration -->
     <div class="formcontainer">
+        
+        <!-- Back button to return to index page -->
+        <div class="back-button">
+            <a href="index.php"><i class='bx bxs-left-arrow'></i></a>
+        </div>
+
         <!-- Title -->
         <h1>Register</h1>
         <hr>
