@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+:root {
+  --orange: #f25f36;
+  --dark-orange: #c24d2c;
+  --red: #df4554;
+  --dark-red: #c0392b;
+  --green: #26b748;
+  --black: #333;
+  --white: #fff;
+  --light-bg: #eee;
+  --dark-bg: #222327;
+  --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  --transition-speed: all 0.5s ease;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+.back-btn a i {
+  color: #c24d2c;
+  font-size: 1.5rem;
+}
+
+.btn,
+.delete-btn {
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px 30px;
+  color: var(--white);
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.btn {
+  background-color: var(--orange);
+}
+
+.btn:hover {
+  background-color: var(--dark-orange);
+}
+
+.delete-btn {
+  background-color: var(--red);
+}
+
+.delete-btn:hover {
+  background-color: var(--dark-red);
+}
+
+.message {
+  margin: 10px 0;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  color: var(--white);
+  font-size: 20px;
+}
+
+.error {
+  background-color: var(--red);
+}
+
+.success {
+  background-color: var(--green);
+}
+
+.update-profile {
+  min-height: 100vh;
+  background-color: var(--dark-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.update-profile form {
+  padding: 20px;
+  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  width: 700px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.update-profile form img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+.update-profile form .back-btn {
+  position: absolute; 
+  left: 20px;
+  top: 20px;
+  z-index: 1000; /* Ensure the back button appears above other content */
+ }
+
+.update-profile form .flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.update-profile form .flex .inputBox {
+  width: 49%;
+}
+
+.update-profile form .flex .inputBox span {
+  text-align: left;
+  display: block;
+  margin-top: 15px;
+  font-size: 17px;
+  color: var(--black);
+}
+
+.update-profile form .flex .inputBox .box {
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--light-bg);
+  padding: 12px 14px;
+  font-size: 17px;
+  color: var(--black);
+  margin-top: 10px;
+}
+
+@media (max-width: 650px) {
+  .update-profile form .flex {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .update-profile form .flex .inputBox {
+    width: 100%;
+  }
+}

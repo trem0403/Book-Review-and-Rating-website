@@ -20,19 +20,34 @@
 </head>
 
 <body>
-    <!-- Back button to return to index page -->
-    <div class="back-button">
-        <a href="index.php"><i class='bx bxs-left-arrow'></i></a>
-    </div>
-
-     <!-- Form container for login -->
+    
+    <!-- Form container for login -->
     <div class="formcontainer">
-         <!-- Title -->
+
+        <!-- Back button to return to index page -->
+        <div class="back-btn">
+            <a href="index.php"><i class='bx bxs-left-arrow'></i></a>
+        </div>
+
+        <!-- Title -->
         <h1>Login</h1>
         <hr>
 
         <!-- Login form -->
         <form action="includes/login-inc.php" method="post">
+
+
+        <?php
+        if (isset($_GET["error"])) {
+            if ($_GET["error"] == "emptyinput") {
+                echo "<div class='errorBox'>Fill in all fields</div>";
+            }
+            else if ($_GET["error"] == "wronglogin") {
+                echo "<div class='errorBox'>Incorrect user name or password  information</div>";
+            }  
+        }
+        ?>
+
             <!-- Username field -->
             <div class="textfield">
                 <label for="username">Username</label>
@@ -60,6 +75,7 @@
         <div class="login-link">
             <p>Don't have an account? <a href="registration.php">Register</a></p>
         </div>
+       
     </div>
 </body>
 </html>
