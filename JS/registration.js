@@ -31,12 +31,16 @@ function validate() {
     const passValue2 = password2.value.trim();
     const termsChecked = terms.checked;
 
+    let result = true;
+
+
     // Email validation using regular expression
     var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(emailValue)) {
       outputError(
         email, "Email address should be non-empty with the format xyx@xyz.xyz."
       );
+      result = false;
     } else {
       outputSuccess(email);
     }
@@ -45,6 +49,7 @@ function validate() {
     if (userValue === "" || userValue.length > 20) {
       outputError(username, "User name should be non-empty, and within 20 characters long."
       );
+      result = false;
     } else {
       outputSuccess(username);
     }
@@ -55,6 +60,7 @@ function validate() {
       outputError(
         password, "Password should be at least 6 characters: 1 uppercase, 1 lowercase."
       );
+      result = false;
     } else {
       outputSuccess(password);
     }
@@ -62,6 +68,7 @@ function validate() {
     // Password match validation
     if (passValue !== passValue2 || passValue === "") {
       outputError(password2, "Please retype password.");
+      result = false;
     } else {
       outputSuccess(password2);
     }
@@ -69,31 +76,17 @@ function validate() {
     // terms validation
     if (!termsChecked) {
       outputError(terms, "Please accept the terms and conditions.");
+      result = false;
     } else {
       outputSuccess(terms);
     }
 
-    // Check if all inputs are valid
-    if (emailValue && userValue && passValue && passValue2 && termsChecked) {
-      email.value = "";
-      username.value = "";
-      password.value = "";
-      password2.value = "";
-      terms.checked = false;
-      newsletter.checked = false;
-    }
+    return result;
   };
 
-  validateInputs(); 
-  return false; // Prevent form submission
+  return validateInputs();
 }
 
-// Add event listener to newsletter checkbox
-newsletter.addEventListener("click", () => {
-  if (newsletter.checked) {
-    alert( "By selecting this option, you may receive spam emails. Click OK to acknowledge."
-    );
-  }
-});
+
 
 

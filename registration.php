@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,20 +9,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Group 8">
-    <title>Register</title>
 
     <!-- External CSS stylesheets -->
-    <link rel="stylesheet" href="/CSS/registration.css">
+    <link rel="stylesheet" href="CSS/registration.css" />
+    
+    <!-- External icons stylesheet -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-
+    
     <!-- External JavaScript file for form validation -->
-    <script defer src="/JS/registration.js"></script>
+    <script defer src="JS/registration.js"></script>
+
+    <title>Register</title>
 </head>
 
 <body>
-    <!-- Back button for navigation -->
+    <!-- Back button to return to index page -->
     <div class="back-button">
-        <a href="/HTML/index.html"><i class='bx bxs-left-arrow'></i></a>
+        <a href="index.php"><i class='bx bxs-left-arrow'></i></a>
     </div>
 
     <!-- Form container for registration -->
@@ -26,10 +33,10 @@
         <!-- Title -->
         <h1>Register</h1>
         <hr>
-
+    
         <!-- Registration form -->
-        <form action="registration.html" method="get" onsubmit="return validate();">
-            <!-- Email field -->
+        <form action="includes/registration-inc.php" method="post" onsubmit="return validate()";>
+             <!-- Email field -->
             <div class="textfield">
                 <label for="email">Email Address</label>
                 <input type="text" name="email" id="email" placeholder="Email">
@@ -38,12 +45,12 @@
 
             <!-- Username field -->
             <div class="textfield">
-                <label for="username">User Name</label>
-                <input type="text" name="username" id="username" placeholder="User name">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Username">
                 <div class="error"></div>
             </div>
 
-            <!-- Password field -->
+              <!-- Password field -->
             <div class="textfield">
                 <label for="pass">Password</label>
                 <input type="password" name="pass" id="pass" placeholder="Password">
@@ -53,7 +60,7 @@
             <!-- Retype password field -->
             <div class="textfield">
                 <label for="pass2">Re-type Password</label>
-                <input type="password" id="pass2" placeholder="Password">
+                <input type="password" name="pass2" id="pass2" placeholder="Re-type Password">
                 <div class="error"></div>
             </div>
 
@@ -65,14 +72,13 @@
             </div>
 
             <!-- Submit button -->
-            <button type="submit" class="submit">Sign-Up</button>
+            <button type="submit" name="submit" class="submit">Sign-Up</button>
         </form>
 
         <!-- Login link -->
         <div class="login-link">
-            <p>Already have an account? <a href="/HTML/login.html">Login</a></p>
+            <p>Already have an account? <a href="login.php">Login</a></p>
         </div>
     </div>
 </body>
-
 </html>

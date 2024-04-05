@@ -74,15 +74,17 @@ header {
     color: var(--accent-color);
 }
 
-.user-section {
+.user {
     display: flex;
     align-items: center;
 }
 
-.user-section i {
+.user i {
     color: var(--accent-color);
     margin-right: 7px;
 }
+
+
 
 #menu-icon {
     font-size: 35px;

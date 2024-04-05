@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,38 +9,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Group 8">
-    <title>Sign-in</title>
 
-    <!-- External CSS stylesheets -->
-    <link rel="stylesheet" href="/CSS/login.css">
+     <!-- External CSS stylesheet -->
+    <link rel="stylesheet" href="CSS/login.css" />
+    
+    <!-- External icons stylesheet -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-
-    <!-- External JavaScript file for form validation -->
-    <script defer src="/JS/login.js"></script>
+    
+    <title>Sign-in</title>
 </head>
 
 <body>
     <!-- Back button to return to index page -->
     <div class="back-button">
-        <a href="/HTML/index.html"><i class='bx bxs-left-arrow'></i></a>
+        <a href="index.php"><i class='bx bxs-left-arrow'></i></a>
     </div>
 
-    <!-- Form container for login -->
+     <!-- Form container for login -->
     <div class="formcontainer">
-        <!-- Title -->
+         <!-- Title -->
         <h1>Login</h1>
         <hr>
 
         <!-- Login form -->
-        <form action="login.html" method="get" onsubmit="return validate();">
+        <form action="includes/login-inc.php" method="post">
             <!-- Username field -->
             <div class="textfield">
-                <label for="username">User Name</label>
-                <input type="text" name="username" id="username" placeholder="User name">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Username/Email">
                 <div class="error"></div>
             </div>
 
-            <!-- Password field -->
+             <!-- Password field -->
             <div class="textfield">
                 <label for="pass">Password</label>
                 <input type="password" name="pass" id="pass" placeholder="Password">
@@ -45,18 +49,17 @@
 
             <!-- Forgot password link -->
             <div class="forgot-link">
-                <a href="/HTML/registration.html">Forgot password?</a>
+                <a href="#">Forgot password?</a>
             </div>
 
             <!-- Submit button -->
-            <button type="submit" class="submit">Sign-in</button>
+            <button type="submit" name="submit" class="submit">Sign-in</button>
         </form>
 
         <!-- Registration link -->
         <div class="login-link">
-            <p>Don't have an account? <a href="/HTML/registration.html">Register</a></p>
+            <p>Don't have an account? <a href="registration.php">Register</a></p>
         </div>
     </div>
 </body>
-
 </html>
