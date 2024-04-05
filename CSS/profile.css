@@ -3,7 +3,8 @@
 :root{
    --blue:#3498db;
    --dark-blue:#2980b9;
-   --red:#e74c3c;
+   --red:#df4554;
+   --green: #26b748;
    --dark-red:#c0392b;
    --black:#333;
    --white:#fff;
@@ -66,10 +67,12 @@
    border-radius: 5px;
    padding:10px;
    text-align: center;
-   background-color: var(--red);
    color:var(--white);
+   background-color: var(--green);
    font-size: 20px;
 }
+
+
 
 .form-container{
    min-height: 100vh;
@@ -187,7 +190,7 @@
 
 .update-profile form img{
    height: 200px;
-   width: 200p;
+   width: 200px;
    border-radius: 50%;
    object-fit: cover;
    margin-bottom: 5px;
