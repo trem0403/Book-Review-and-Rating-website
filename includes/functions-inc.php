@@ -106,7 +106,7 @@ function createUser($con, $email, $username, $pass)
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header("location: ../registration.php");
+    header("location: ../login.php");
 }
 
 function emptyInputLogin($username, $pass)
