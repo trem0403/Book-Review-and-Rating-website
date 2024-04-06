@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $currentPage = basename($_SERVER['PHP_SELF']); // Get the current page filename
 ?>
 
 <!DOCTYPE html>
@@ -34,11 +35,12 @@
         
         <!-- Navigation links -->
         <ul class="navbar">
-            <li><a href="index.php" class="active">Home</a></li>
-            <li><a href="#">Reviews</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
+        <li <?php if ($currentPage == 'index.php') echo 'class="active"'; ?>><a href="index.php">Home</a></li>
+        <li <?php if ($currentPage == 'reviews.php') echo 'class="active"'; ?>><a href="reviews.php">Reviews</a></li>
+        <li <?php if ($currentPage == 'services.php') echo 'class="active"'; ?>><a href="services.php">Services</a></li>
+        <li <?php if ($currentPage == 'blog.php') echo 'class="active"'; ?>><a href="blog.php">Blog</a></li>
+        <li <?php if ($currentPage == 'contact.php') echo 'class="active"'; ?>><a href="contact.php">Contact</a></li>
+        </ul>
         </ul>
 
         <!-- User section -->

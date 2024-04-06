@@ -52,7 +52,7 @@ header {
     color: var(--accent-color);
 }
 
-.navbar a.active {
+.navbar li.active a {
     color: var(--accent-color);
 }
 

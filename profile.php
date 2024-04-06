@@ -38,10 +38,9 @@ include 'includes/profile-inc.php'; // Include the file containing profile updat
       }
       ?>
 
-      <!-- Back button to return to index page -->
-      <form action="" method="post" enctype="multipart/form-data">
-
-      
+<form action="" method="post" enctype="multipart/form-data">
+   
+   <!-- Back button to return to index page -->
       <div class="back-btn">
          <a href="index.php"><i class='bx bxs-left-arrow'></i></a>
       </div>
