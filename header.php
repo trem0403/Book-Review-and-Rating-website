@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="CSS/footer.css" />
     <link rel="stylesheet" href="CSS/index.css" />
 
+    <!-- External JavaScript file for navigation menu -->
+    <script defer type="text/javascript" src="JS/nav.js"></script>
+
     <!-- External icons stylesheets -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">

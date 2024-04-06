@@ -20,5 +20,3 @@ include_once 'header.php';
 
 </body>
 </html>
-<!-- External JavaScript file for navigation menu -->
-<script type="text/javascript" src="JS/nav.js"></script>

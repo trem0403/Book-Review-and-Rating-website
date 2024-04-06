@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 :root {
   --orange: #f25f36;
@@ -15,7 +15,7 @@
 }
 
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -29,10 +29,9 @@
   font-size: 1.5rem;
 }
 
-.btn,
-.delete-btn {
+.btn {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px 30px;
   color: var(--white);
   display: block;
@@ -40,6 +39,19 @@
   cursor: pointer;
   font-size: 20px;
   margin-top: 10px;
+}
+
+.delete-btn {
+  width: 30%;
+  border-radius: 10px;
+  padding: 5px 25px;
+  color: var(--white);
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  font-size: 15px;
+  margin: 15px auto;
+  margin-bottom: -10px;
 }
 
 .btn {

@@ -1,9 +1,9 @@
 <?php
-include 'includes/connections-inc.php';
 session_start();
+include 'includes/connections-inc.php';
+include 'includes/profile-inc.php'; // Include the file containing profile update logic
 $user_id = $_SESSION['userid'];
 
-include 'includes/profile-inc.php'; // Include the file containing profile update logic
 
 ?>
 
@@ -81,7 +81,7 @@ include 'includes/profile-inc.php'; // Include the file containing profile updat
             </div>
          </div>
          <input type="submit" value="Update Profile" name="update_profile" class="btn">
-         <a href="index.php" class="delete-btn">Home Page</a>
+         <a href="index.php" class="delete-btn">Delete User</a>
 
       </form>
 

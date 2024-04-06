@@ -138,7 +138,7 @@ header {
         transform: translateY(5px);
     }
 
-    .navbar a.active {
+    .navbar li.active a {
         color: var(--text-color);
     }
 
