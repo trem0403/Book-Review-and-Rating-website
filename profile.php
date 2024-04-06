@@ -22,8 +22,6 @@ $user_id = $_SESSION['userid'];
 
    <!-- External icons stylesheet -->
    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-
-
 </head>
 
 <body>
@@ -81,7 +79,7 @@ $user_id = $_SESSION['userid'];
             </div>
          </div>
          <input type="submit" value="Update Profile" name="update_profile" class="btn">
-         <a href="index.php" class="delete-btn">Delete User</a>
+         <button class="delete-btn" onclick=" return confirmDelete()">Delete User</button>
 
       </form>
 
