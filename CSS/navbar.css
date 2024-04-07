@@ -16,6 +16,7 @@ header {
     justify-content: space-between;
     padding: 15px 12%;
     transition: var(--transition-speed);
+    background-color: black;
 }
 
 .logo {
@@ -119,7 +120,7 @@ header {
         width: 270px;
         height: 31vh;
         display: flex;
-        background-color: var(--accent-color);
+        background-color: rgba(24, 24, 24, 0.7); /* Transparent grey color */
         flex-direction: column;
         justify-content: flex-start;
         border-radius: 10px;

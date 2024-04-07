@@ -1,7 +1,21 @@
-<?php
-include_once 'header.php';
-?>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Group 8">
+
+     <!-- External CSS stylesheet -->
+    <link rel="stylesheet" href="CSS/index.css" />
+    
+    <title>Home</title>
+</head>
+<body>
+    <?php
+    include_once 'header.php';
+    ?>
+</body>
      <!-- Footer section -->
     <footer>
         <div class="footer">
@@ -17,6 +31,4 @@ include_once 'header.php';
 
         </div>
     </footer>
-
-</body>
 </html>
