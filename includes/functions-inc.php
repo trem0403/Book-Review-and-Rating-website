@@ -110,10 +110,31 @@ function createUser($con, $email, $username, $pass)
     header("location: ../login.php");
 }
 
-function deleteUser()
+function deleteUser($con, $user_id)
 {
+    $query = "DELETE FROM users WHERE user_id = ?";
+    $stmt = mysqli_stmt_init($con);
 
-}
+    if (!mysqli_stmt_prepare($stmt, $query)) {
+        header("location: profile.php");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "i", $user_id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    // Check if the deleted user is the currently logged-in user
+    session_start();
+    if ($_SESSION['userid'] == $user_id) {
+        // Clear session variables
+        session_unset();
+        // Destroy the session
+        session_destroy();
+        // Redirect the user to the login page or any other appropriate page
+        header("location: index.php");
+        exit();
+}}
 
 function emptyInputLogin($username, $pass)
 {

@@ -1,10 +1,8 @@
 <?php
 session_start();
-include 'includes/connections-inc.php';
-include 'includes/profile-inc.php'; // Include the file containing profile update logic
 $user_id = $_SESSION['userid'];
-
-
+include 'includes/connections-inc.php';
+include 'includes/profile-inc.php'; // file containing profile update logic
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +17,12 @@ $user_id = $_SESSION['userid'];
 
    <!-- External CSS stylesheets  -->
    <link rel="stylesheet" href="CSS/profile.css">
+   <link rel="stylesheet" href="CSS/popUp-form.css">
+
+
+   <!-- External JavaScript file  -->
+   <script defer type="text/javascript" src="JS/profile.js"></script>
+
 
    <!-- External icons stylesheet -->
    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -36,13 +40,13 @@ $user_id = $_SESSION['userid'];
       }
       ?>
 
-<form action="" method="post" enctype="multipart/form-data">
-   
-   <!-- Back button to return to index page -->
-      <div class="back-btn">
-         <a href="index.php"><i class='bx bxs-left-arrow'></i></a>
-      </div>
-      
+      <form action="" method="post" enctype="multipart/form-data">
+
+         <!-- Back button to return to index page -->
+         <div class="back-btn">
+            <a href="index.php"><i class='bx bxs-left-arrow'></i></a>
+         </div>
+
          <?php
          // Display user image
          if ($fetch['user_image'] == 'img/profile/default-avatar.png') {
@@ -50,7 +54,6 @@ $user_id = $_SESSION['userid'];
          } else {
             echo '<img src="img/uploaded_img/' . $fetch['user_image'] . '">';
          }
-
          // Display messages if any
          if (isset($message)) {
             foreach ($message as $message) {
@@ -60,6 +63,7 @@ $user_id = $_SESSION['userid'];
             }
          }
          ?>
+
          <div class="flex">
             <div class="inputBox">
                <span>Username:</span>
@@ -79,11 +83,35 @@ $user_id = $_SESSION['userid'];
             </div>
          </div>
          <input type="submit" value="Update Profile" name="update_profile" class="btn">
-         <button class="delete-btn" onclick=" return confirmDelete()">Delete User</button>
+         <button id="delete" type="button" class="delete-btn">Delete User</button>
+         <!-- Popup form container -->
+         <div id="myModal" class="modal">
+            <div class="modal-content">
+               <span class="close">&times;</span>
+               <p>Are you sure you want to delete this user?</p>
+               <form method="post">
+                  <input type="submit" name="confirm" id="confirm" value="Yes" class="confirm-btn">
+                  <button type="button" class="cancel-btn">No</button>
+               </form>
 
+               <?php
+
+               if (array_key_exists('confirm', $_POST)) {
+
+                  require_once 'includes/connections-inc.php';
+                  require_once 'includes/functions-inc.php';
+
+                  deleteUser($con, $user_id);
+               }
+
+               ?>
+
+            </div>
+         </div>
       </form>
-
    </div>
+
+
 
 </body>
 
