@@ -9,9 +9,6 @@ var span = document.getElementsByClassName("close")[0];
 // Get the "No" button in the modal
 var cancelButton = document.getElementsByClassName("cancel-btn")[0];
 
-// Get the "Yes" button in the modal
-// var confirmButton = document.getElementsByClassName("confirm-btn")[0];
-
 // When the user clicks the button, open the modal
 btn.addEventListener("click", function (event) {
   event.preventDefault(); // Prevent default form submission behavior
