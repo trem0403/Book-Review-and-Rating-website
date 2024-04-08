@@ -20,7 +20,8 @@ body {
     background: var(--bg-color);
     background-image: url(http://localhost/Book-Review-and-Rating-website/img/background/home-background.jpg); 
     background-repeat: no-repeat; /* Ensure the background image is not repeated */
-    background-size: cover; /* Ensure the background image covers the entire element */
+    background-size: contain; /* Ensure the background image covers the entire element */
+    background-position: center; /* Center the background image horizontally and vertically */
     color: var(--text-color);
     display: flex;
 }
