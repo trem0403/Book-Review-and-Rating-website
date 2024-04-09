@@ -7,7 +7,6 @@ $dbName = "book_review_db";
 
 $con = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName);
 
-if(!$con)
-{
+if (!$con) {
     die("Failed to connect:" . mysqli_connect_error());
 }

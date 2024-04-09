@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -10,17 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Group 8">
 
-     <!-- External CSS stylesheet -->
+    <!-- External CSS stylesheet -->
     <link rel="stylesheet" href="CSS/login.css" />
-    
+
     <!-- External icons stylesheet -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    
+
     <title>Sign-in</title>
 </head>
 
 <body>
-    
+
     <!-- Form container for login -->
     <div class="formcontainer">
 
@@ -37,16 +37,15 @@
         <form action="includes/login-inc.php" method="post">
 
 
-        <?php
-        if (isset($_GET["error"])) {
-            if ($_GET["error"] == "emptyinput") {
-                echo "<div class='errorBox'>Fill in all fields</div>";
+            <?php
+            if (isset($_GET["error"])) {
+                if ($_GET["error"] == "emptyinput") {
+                    echo "<div class='errorBox'>Fill in all fields</div>";
+                } else if ($_GET["error"] == "wronglogin") {
+                    echo "<div class='errorBox'>Incorrect user name or password  information</div>";
+                }
             }
-            else if ($_GET["error"] == "wronglogin") {
-                echo "<div class='errorBox'>Incorrect user name or password  information</div>";
-            }  
-        }
-        ?>
+            ?>
 
             <!-- Username field -->
             <div class="textfield">
@@ -55,7 +54,7 @@
                 <div class="error"></div>
             </div>
 
-             <!-- Password field -->
+            <!-- Password field -->
             <div class="textfield">
                 <label for="pass">Password</label>
                 <input type="password" name="pass" id="pass" placeholder="Password">
@@ -75,7 +74,8 @@
         <div class="login-link">
             <p>Don't have an account? <a href="registration.php">Register</a></p>
         </div>
-       
+
     </div>
 </body>
+
 </html>

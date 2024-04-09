@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -12,10 +12,10 @@
 
     <!-- External CSS stylesheets -->
     <link rel="stylesheet" href="CSS/registration.css" />
-    
+
     <!-- External icons stylesheet -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    
+
     <!-- External JavaScript file for form validation -->
     <script defer src="JS/registration.js"></script>
 
@@ -23,10 +23,10 @@
 </head>
 
 <body>
-    
+
     <!-- Form container for registration -->
     <div class="formcontainer">
-        
+
         <!-- Back button to return to index page -->
         <div class="back-btn">
             <a href="index.php"><i class='bx bxs-left-arrow'></i></a>
@@ -35,10 +35,10 @@
         <!-- Title -->
         <h1>Register</h1>
         <hr>
-    
+
         <!-- Registration form -->
-        <form action="includes/registration-inc.php" method="post" onsubmit="return validate()";>
-             <!-- Email field -->
+        <form action="includes/registration-inc.php" method="post" onsubmit="return validate()" ;>
+            <!-- Email field -->
             <div class="textfield">
                 <label for="email">Email Address</label>
                 <input type="text" name="email" id="email" placeholder="Email">
@@ -52,7 +52,7 @@
                 <div class="error"></div>
             </div>
 
-              <!-- Password field -->
+            <!-- Password field -->
             <div class="textfield">
                 <label for="pass">Password</label>
                 <input type="password" name="pass" id="pass" placeholder="Password">
@@ -83,4 +83,5 @@
         </div>
     </div>
 </body>
+
 </html>

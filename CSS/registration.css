@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 :root {
   font-size: 16px;
   --bg-color: #222327;
@@ -12,7 +12,7 @@ body {
   background-image: url(../img/background/orange-bg.jpg);
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .back-btn {
@@ -25,7 +25,7 @@ body {
 .back-btn a i {
   color: var(--accent-color);
   font-size: 1.5rem;
-  transition: var(--transition-speed); 
+  transition: var(--transition-speed);
 }
 
 .back-btn a i:hover {
@@ -134,14 +134,12 @@ button:hover {
   text-decoration: underline;
 }
 
-
-@media only screen and (max-width:2000px) {
+@media only screen and (max-width: 2000px) {
   .formcontainer {
     width: 50%;
     padding: 5px 40px;
   }
 }
-
 
 @media (max-width: 1056px) {
   .formcontainer {
@@ -149,8 +147,7 @@ button:hover {
   }
 }
 
-@media only screen and (max-width:750px) {
-
+@media only screen and (max-width: 750px) {
   .formcontainer {
     font-size: 0.8rem;
     width: 80%;
@@ -159,16 +156,16 @@ button:hover {
   .formcontainer h1 {
     font-size: 1.3rem;
   }
-  
+
   .checkbox label {
     font-size: 0.6rem;
   }
-  
+
   .checkbox input[type="checkbox"] {
-    width: 10px; 
-    height: 10px; 
+    width: 10px;
+    height: 10px;
   }
-  
+
   .checkbox .error {
     font-size: 0.5rem;
     margin-left: 5px;
@@ -180,4 +177,3 @@ button:hover {
     padding: 10px 2px;
   }
 }
-

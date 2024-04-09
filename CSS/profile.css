@@ -102,7 +102,7 @@
   width: 700px;
   text-align: center;
   border-radius: 5px;
-  position: relative; 
+  position: relative;
 }
 
 .update-profile form img {
@@ -123,8 +123,7 @@
 .update-profile form .back-btn a i {
   color: var(--orange);
   font-size: 1.5rem;
-  transition: var(--transition-speed); 
-
+  transition: var(--transition-speed);
 }
 
 .update-profile form .back-btn a i:hover {

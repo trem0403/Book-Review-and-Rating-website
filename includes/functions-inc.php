@@ -1,62 +1,47 @@
 <?php
 
-function emptyInputRegistration ($email, $username, $pass, $pass2)
+function emptyInputRegistration($email, $username, $pass, $pass2)
 {
-    if(empty($email) || empty($username) || empty($pass) || empty($pass2))
-    {
+    if (empty($email) || empty($username) || empty($pass) || empty($pass2)) {
         return true;
-    }
-    else
-    {
-        return false;
-    }   
-}
-
-function invalidEmail ($email)
-{
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL))
-    {
-        return true;
-    }
-    else
-    {
+    } else {
         return false;
     }
 }
 
-function invalidUsername ($username)
+function invalidEmail($email)
 {
-    if(empty($username) || strlen($username) > 20)
-    {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         return true;
-    }
-    else
-    {
+    } else {
         return false;
     }
 }
 
-function passwordStrength ($pass)
+function invalidUsername($username)
 {
-    if(strlen($pass) < 6 || !preg_match("/[A-Z]/", $pass) || !preg_match("/[a-z]/", $pass))
-    {
+    if (empty($username) || strlen($username) > 20) {
         return true;
-    }
-    else
-    {
+    } else {
         return false;
     }
-    
 }
 
-function passwordMatch ($pass, $pass2)
+function passwordStrength($pass)
 {
-    if($pass !== $pass2)
-    {
+    if (strlen($pass) < 6 || !preg_match("/[A-Z]/", $pass) || !preg_match("/[a-z]/", $pass)) {
         return true;
+    } else {
+        return false;
     }
-    else
-    {
+
+}
+
+function passwordMatch($pass, $pass2)
+{
+    if ($pass !== $pass2) {
+        return true;
+    } else {
         return false;
     }
 }
@@ -66,8 +51,7 @@ function userExists($con, $username, $email)
     $query = "SELECT * FROM users WHERE user_name = ? OR user_email = ?;";
     $stmt = mysqli_stmt_init($con);
 
-    if(!mysqli_stmt_prepare($stmt, $query))
-    {
+    if (!mysqli_stmt_prepare($stmt, $query)) {
         header("location: ../registration.php");
         exit();
     }
@@ -77,15 +61,12 @@ function userExists($con, $username, $email)
 
     $dataResult = mysqli_stmt_get_result($stmt);
 
-    if($row = mysqli_fetch_assoc($dataResult))
-    {
+    if ($row = mysqli_fetch_assoc($dataResult)) {
         mysqli_stmt_close($stmt);
         return $row;
-    }
-    else
-    {
+    } else {
         mysqli_stmt_close($stmt);
-        return false;  
+        return false;
     }
 }
 
@@ -95,8 +76,7 @@ function createUser($con, $email, $username, $pass)
     $query = "INSERT INTO users (user_email, user_name, user_password, user_image) VALUES (?, ?, ?, ?)";
     $stmt = mysqli_stmt_init($con);
 
-    if(!mysqli_stmt_prepare($stmt, $query))
-    {
+    if (!mysqli_stmt_prepare($stmt, $query)) {
         header("location: ../registration.php");
         exit();
     }
@@ -134,45 +114,39 @@ function deleteUser($con, $user_id)
         // Redirect the user to the login page or any other appropriate page
         header("location: index.php");
         exit();
-}}
+    }
+}
 
 function emptyInputLogin($username, $pass)
 {
-    if(empty($username) || empty($pass))
-    {
+    if (empty($username) || empty($pass)) {
         return true;
-    }
-    else
-    {
+    } else {
         return false;
-    }   
+    }
 }
 
 function loginUser($con, $username, $pass)
 {
     $userExists = userExists($con, $username, $username);
-    
-    if($userExists === false)
-    {
+
+    if ($userExists === false) {
         header("location: ../login.php?error=wronglogin");
-        exit(); 
+        exit();
     }
 
     $passwordHashed = $userExists["user_password"];
     $checkPassword = password_verify($pass, $passwordHashed);
 
-    if($checkPassword === false)
-    {
+    if ($checkPassword === false) {
         header("location: ../login.php?error=wronglogin");
-        exit(); 
-    }
-    else if ($checkPassword === true)
-    {
+        exit();
+    } else if ($checkPassword === true) {
         session_start();
         $_SESSION["userid"] = $userExists["user_id"];
         $_SESSION["username"] = $userExists["user_name"];
         header("location: ../index.php");
-        exit(); 
+        exit();
     }
 }
 

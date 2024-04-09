@@ -4,7 +4,6 @@ function validate() {
   const password = document.getElementById("pass");
   const password2 = document.getElementById("pass2");
   const terms = document.getElementById("terms");
-  
 
   const outputError = (input, message) => {
     const textArea = input.parentElement;
@@ -33,12 +32,12 @@ function validate() {
 
     let result = true;
 
-
     // Email validation using regular expression
     var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(emailValue)) {
       outputError(
-        email, "Email address should be non-empty with the format xyx@xyz.xyz."
+        email,
+        "Email address should be non-empty with the format xyx@xyz.xyz."
       );
       result = false;
     } else {
@@ -47,7 +46,9 @@ function validate() {
 
     // User name validation
     if (userValue === "" || userValue.length > 20) {
-      outputError(username, "User name should be non-empty, and within 20 characters long."
+      outputError(
+        username,
+        "User name should be non-empty, and within 20 characters long."
       );
       result = false;
     } else {
@@ -58,7 +59,8 @@ function validate() {
     var passPattern = /(?=.*[a-z])(?=.*[A-Z])/;
     if (passValue.length < 6 || !passPattern.test(passValue)) {
       outputError(
-        password, "Password should be at least 6 characters: 1 uppercase, 1 lowercase."
+        password,
+        "Password should be at least 6 characters: 1 uppercase, 1 lowercase."
       );
       result = false;
     } else {
@@ -86,7 +88,3 @@ function validate() {
 
   return validateInputs();
 }
-
-
-
-
