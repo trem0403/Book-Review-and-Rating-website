@@ -23,6 +23,7 @@ if (isset($_POST['update_profile'])) {
     $existingUser = userExists($con, $update_name, $update_email);
     if ($existingUser && $existingUser['user_id'] !== $user_id) {
         $message[] = 'Username or email already exists. Please choose a different one.';
+        $messageType = 'error';
     } else {
         // Proceed with updating the profile if username and email are unique
         mysqli_query($con, "UPDATE `users` SET user_name = '$update_name', user_email = '$update_email' WHERE user_id = '$user_id'") or die('query failed');
