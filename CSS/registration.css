@@ -4,11 +4,12 @@
   --bg-color: #222327;
   --text-color: #fff;
   --accent-color: #f25f36;
+  --dark-orange: #c24d2c;
   --transition-speed: all 0.5s ease;
 }
 
 body {
-  background-image: url(http://localhost/Book-Review-and-Rating-website/img/background/bi-background-black.png);
+  background-image: url(../img/background/orange-bg.jpg);
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
@@ -21,9 +22,15 @@ body {
   z-index: 1000; /* Ensure the back button appears above other content */
 }
 
-.back-btn a i { 
-  color: #c24d2c;
+.back-btn a i {
+  color: var(--accent-color);
   font-size: 1.5rem;
+  transition: var(--transition-speed); 
+}
+
+.back-btn a i:hover {
+  transform: scale(1.1); /* Scale up the button on hover */
+  color: var(--dark-orange);
 }
 
 .formcontainer {
@@ -32,7 +39,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
-  border: 3px solid #585858;
+  border: 3px solid #222327;
   border-radius: 10px;
   background-color: #f9f9f9;
 }

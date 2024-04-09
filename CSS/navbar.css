@@ -1,150 +1,152 @@
 :root {
-    --bg-color: #222327;
-    --text-color: #fff;
-    --accent-color: #c24d2c;
-    --transition-speed: all .50s ease;
+  --bg-color: #222327;
+  --text-color: #fff;
+  --accent-color: #c24d2c;
+  --transition-speed: all 0.5s ease;
 }
 
 header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    right: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 12%;
-    transition: var(--transition-speed);
-    background-color: black;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 12%;
+  transition: var(--transition-speed);
+  background-color: black;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo i {
-    color: var(--accent-color);
-    font-size: 28px;
-    margin-right: 3px;
+  color: var(--accent-color);
+  font-size: 28px;
+  margin-right: 3px;
 }
 
 .logo span {
-    color: var(--text-color);
-    font-size: 1.1rem;
-    font-weight: 600;
-
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .navbar {
-    display: flex;
+  display: flex;
 }
 
 .navbar a {
-    color: var(--text-color);
-    font-size: 1.1rem;
-    padding: 5px 0;
-    margin: 0px 30px;
-    transition: var(--transition-speed);
+  color: var(--text-color);
+  font-size: 1.1rem;
+  padding: 5px 0;
+  margin: 0px 30px;
+  transition: var(--transition-speed);
 }
 
 .navbar a:hover {
-    color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 .navbar li.active a {
-    color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 .user-section {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-.user-section a{
-    margin-right: 25px;
-    margin-left: 10px;
-    color: var(--text-color);
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: var(--transition-speed);
+.user-section a {
+  margin-right: 25px;
+  margin-left: 10px;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: var(--transition-speed);
 }
 
 .user-section a:hover {
-    color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.pfp {
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .user {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .user i {
-    color: var(--accent-color);
-    margin-right: 7px;
+  color: var(--accent-color);
+  margin-right: 7px;
 }
 
-
-
 #menu-icon {
-    font-size: 35px;
-    color: var(--text-color);
-    cursor: pointer;
-    z-index: 10001;
-    display: none;
+  font-size: 35px;
+  color: var(--text-color);
+  cursor: pointer;
+  z-index: 10001;
+  display: none;
 }
 
 @media (max-width: 1280px) {
+  header {
+    padding: 14px 2%;
+    transition: 0.2s;
+  }
 
-    header {
-        padding: 14px 2%;
-        transition: .2s;
-    }
-
-    .navbar a {
-        padding: 16px;
-        margin: 5px;
-    }
+  .navbar a {
+    padding: 16px;
+    margin: 5px;
+  }
 }
 
 @media (max-width: 1090px) {
-    #menu-icon {
-        display: block;
-    }
-    
-    .navbar {
-        position: absolute;
-        top: 100%;
-        right: -100%;
-        width: 270px;
-        height: 31vh;
-        display: flex;
-        background-color: rgba(24, 24, 24, 0.7); /* Transparent grey color */
-        flex-direction: column;
-        justify-content: flex-start;
-        border-radius: 10px;
-        transition: var(--transition-speed);
-    }
+  #menu-icon {
+    display: block;
+  }
 
-    .navbar a {
-        display: block;
-        margin: 12px 0;
-        padding: 0px 25px;
-        transition: var(--transition-speed);
-    }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 270px;
+    height: 25vh;
+    display: flex;
+    background-color: rgba(24, 24, 24, 0.7); /* Transparent grey color */
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 10px;
+    transition: var(--transition-speed);
+  }
 
-    .navbar a:hover {
-        color: var(--text-color);
-        transform: translateY(5px);
-    }
+  .navbar a {
+    display: block;
+    margin: 12px 0;
+    padding: 0px 25px;
+    transition: var(--transition-speed);
+  }
 
-    .navbar li.active a {
-        color: var(--text-color);
-    }
+  .navbar a:hover {
+    color: var(--text-color);
+    transform: translateY(5px);
+  }
 
-    .navbar.open {
-        right: 2%;
-    }
+  .navbar li.active a {
+    color: var(--text-color);
+  }
 
+  .navbar.open {
+    right: 2%;
+  }
 }

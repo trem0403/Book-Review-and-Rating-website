@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 
 :root {
   --orange: #f25f36;
@@ -15,18 +15,13 @@
 }
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   outline: none;
   border: none;
   text-decoration: none;
-}
-
-.back-btn a i {
-  color: #c24d2c;
-  font-size: 1.5rem;
 }
 
 .btn {
@@ -42,7 +37,7 @@
 }
 
 .delete-btn {
-  width: 30%;
+  width: 40%;
   border-radius: 10px;
   padding: 5px 25px;
   color: var(--white);
@@ -90,7 +85,9 @@
 
 .update-profile {
   min-height: 100vh;
-  background-color: var(--dark-bg);
+  background-image: url(../img/background/bookcase_bg.jpg);
+  background-position: center;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,6 +102,7 @@
   width: 700px;
   text-align: center;
   border-radius: 5px;
+  position: relative; 
 }
 
 .update-profile form img {
@@ -116,11 +114,23 @@
 }
 
 .update-profile form .back-btn {
-  position: absolute; 
-  left: 20px;
+  position: absolute;
   top: 20px;
+  left: 20px;
   z-index: 1000; /* Ensure the back button appears above other content */
- }
+}
+
+.update-profile form .back-btn a i {
+  color: var(--orange);
+  font-size: 1.5rem;
+  transition: var(--transition-speed); 
+
+}
+
+.update-profile form .back-btn a i:hover {
+  transform: scale(1.1); /* Scale up the button on hover */
+  color: var(--dark-orange);
+}
 
 .update-profile form .flex {
   display: flex;
